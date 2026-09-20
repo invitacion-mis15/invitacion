@@ -143,20 +143,18 @@
             margin: 18px auto;
         }
 
+        /* Estilo de la frase sin fondo ni bordes */
         .phrase {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #ffffff;
             line-height: 1.6;
             margin-bottom: 25px;
-            padding: 14px 15px;
-            background: rgba(15, 8, 25, 0.65);
-            border-radius: 15px;
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+            padding: 10px 15px;
+            background: transparent;
+            border: none;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8);
             text-align: center;
         }
 
@@ -371,12 +369,12 @@
     <div id="start-overlay" onclick="startExperience()">
         <h2>Agustina</h2>
         <p>Mis 15 Años</p>
-        <button class="btn-start">Abrir Invitación</button>
+        <button class="btn-start">✨ Abrir Invitación</button>
     </div>
 
     <div class="music-btn" onclick="toggleAudio()" title="Música de fondo">🎵</div>
 
-    <!-- Reproductor configurado con el archivo pgn.mp4 de tu repositorio -->
+    <!-- Reproductor configurado con pgn.mp4 -->
     <audio id="bgMusic" loop preload="auto" playsinline webkit-playsinline>
         <source src="pgn.mp4" type="audio/mp4">
         <source src="pgn.mp4" type="video/mp4">
