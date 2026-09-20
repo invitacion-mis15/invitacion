@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat:wght@400;600&family=Pinyon+Script&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-
+    
     <!-- Librería para generar el código QR dinámicamente -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
@@ -143,7 +143,7 @@
             margin: 18px auto;
         }
 
-        /* Estilo de la frase sin fondo ni bordes */
+        /* Frase completamente sin recuadro ni fondo */
         .phrase {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -151,9 +151,13 @@
             color: #ffffff;
             line-height: 1.6;
             margin-bottom: 25px;
-            padding: 10px 15px;
-            background: transparent;
-            border: none;
+            padding: 10px 5px !important;
+            background: none !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8);
             text-align: center;
         }
