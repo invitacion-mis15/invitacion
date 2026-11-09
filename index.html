@@ -352,28 +352,17 @@
                 <button class="btn-action btn-outline" onclick="openLocationMap()">📍 Ver Ubicación</button>
             </div>
 
-            <!-- SECCIÓN NUEVA: RECORDATORIO / TIPS PARA EL DÍA -->
-            <div class="card-box" style="border: 1px solid #ffae00; background: rgba(30, 12, 45, 0.85);">
-                <h3>✨ ¡Recordatorio Importante!</h3>
-                <p style="font-size: 0.85rem; color: #ffffff; margin-bottom: 12px; line-height: 1.5;">
-                    ¡Disfrutemos a pleno al aire libre! Te recordamos traer lo necesario para pasar una tarde genial:
-                </p>
-                <div class="items-list">
-                    <span class="tag-item">🏊‍♀️ Ropa de pileta</span>
-                    <span class="tag-item">👕 Ropa cómoda</span>
-                    <span class="tag-item">🪑 Tu silleta</span>
-                    <span class="tag-item">🧉 Mate / Tereré</span>
-                </div>
-                <p style="font-size: 0.78rem; color: #ffd700; margin-top: 12px; font-style: italic;">
-                    ¡Te esperamos con muchas ansias para festejar juntos!
-                </p>
-            </div>
-
             <div class="card-box">
                 <h3>Día al Aire Libre</h3>
                 <p style="font-size: 0.82rem; color: #ffffff; margin-bottom: 8px;">
                     Dress Code: <b style="color: #ffd700;">Casual & Cómodo</b>
                 </p>
+                <p style="font-size: 0.78rem; color: #ffd700; margin-bottom: 10px;">Te sugerimos traer:</p>
+                <div class="items-list">
+                    <span class="tag-item">🪑 Tu silleta</span>
+                    <span class="tag-item">🧉 Mate / Tereré</span>
+                    <span class="tag-item">✨ Muchas ganas de disfrutar</span>
+                </div>
             </div>
 
             <!-- SECCIÓN CON EL CÓDIGO QR DIRECTO -->
@@ -412,10 +401,6 @@
         // CONFIGURACIÓN DE ENLACES
         const ALBUM_URL = "https://photos.app.goo.gl/MQQgbzZxboYACygS9";
         const MAPS_URL = "https://maps.app.goo.gl/ir9rUSUv9ZQCoKmm7?g_st=aw";
-
-        // CONFIGURACIÓN DE TELÉFONOS DE WHATSAPP
-        const RSVP_PHONE_NUMBER = "5493764803907"; // Número para Confirmar Asistencia
-        const MESSAGES_PHONE_NUMBER = "NUMERO_DE_LA_QUINCEAÑERA"; // Número para recibir mensajes/felicitaciones
 
         // GENERACIÓN AUTOMÁTICA DEL QR AL CARGAR LA PÁGINA
         window.addEventListener('DOMContentLoaded', () => {
@@ -527,25 +512,25 @@
             window.open(ALBUM_URL, '_blank');
         }
 
-        // ENVIAR MENSAJE PARA LA QUINCEAÑERA
+        // FUNCIONES DE WHATSAPP
+        const PHONE_NUMBER = "5493764803907";
+
         function sendWish() {
             const name = document.getElementById('senderName').value.trim();
             const message = document.getElementById('wishMessage').value.trim();
 
-            String.prototype.trim.call(name);
             if (!name || !message) {
                 alert("Por favor completa tu nombre y el mensaje.");
                 return;
             }
 
             const text = `¡Hola! Soy *${name}* y le dejo este mensaje a Agustina por sus 15 años:\n\n"${message}"`;
-            window.open(`https://api.whatsapp.com/send?phone=${MESSAGES_PHONE_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        // CONFIRMAR ASISTENCIA
         function confirmRSVP() {
             const text = "¡Hola! Quisiera confirmar mi asistencia para los 15 años de Agustina. 🌸✨";
-            window.open(`https://api.whatsapp.com/send?phone=${RSVP_PHONE_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
         }
     </script>
 </body>
