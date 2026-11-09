@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mis 15 - Agustina</title>
     
-    <!-- Vista Previa Elegante para WhatsApp y Redes Sociales (Open Graph) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mis 15 Años - Agustina">
-    <meta property="og:description" content="Te espero para compartir juntos un día inolvidable. ¡Toca aquí para ver tu invitación!">
-    <meta property="og:image" content="https://TU-USUARIO.github.io/invitacion/torre.jpg">
-    <meta property="og:url" content="https://TU-USUARIO.github.io/invitacion/">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Montserrat:wght@400;600&family=Pinyon+Script&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
@@ -38,61 +31,6 @@
             padding: 20px 10px;
             overflow-x: hidden;
             position: relative;
-        }
-
-        /* Overlay de Bienvenida para Autoplay de Audio en Celulares */
-        #start-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(5, 3, 8, 0.96);
-            z-index: 99999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #start-overlay h2 {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 3.5rem;
-            color: #ffd700;
-            margin-bottom: 10px;
-        }
-
-        #start-overlay p {
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: #ffffff;
-            margin-bottom: 25px;
-        }
-
-        .btn-start {
-            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
-            color: #0d0614;
-            padding: 14px 28px;
-            border-radius: 30px;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: none;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-            animation: pulse 1.8s infinite;
-            cursor: pointer;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.98); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(0.98); }
         }
 
         .invitation-card {
@@ -150,22 +88,20 @@
             margin: 18px auto;
         }
 
-        /* Frase limpia sin fondo, recuadro ni bordes */
         .phrase {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #ffffff;
             line-height: 1.6;
             margin-bottom: 25px;
-            padding: 10px 5px !important;
-            background: none !important;
-            background-color: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8);
+            padding: 14px 15px;
+            background: rgba(15, 8, 25, 0.65);
+            border-radius: 15px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
             text-align: center;
         }
 
@@ -353,6 +289,7 @@
             color: #ffd700;
         }
 
+        /* ESTILOS DEL QR EN PANTALLA */
         .qr-card-container {
             display: inline-block;
             background: #ffffff;
@@ -376,22 +313,13 @@
 </head>
 <body>
 
-    <!-- Pantalla de Inicio para activar Audio en Celulares -->
-    <div id="start-overlay" onclick="startExperience()">
-        <h2>Agustina</h2>
-        <p>Mis 15 Años</p>
-        <button class="btn-start">Abrir Invitación</button>
-    </div>
-
     <div class="music-btn" onclick="toggleAudio()" title="Música de fondo">🎵</div>
-
-    <!-- Reproductor configurado con pgn.mp4 -->
-    <audio id="bgMusic" loop preload="auto" playsinline webkit-playsinline>
-        <source src="pgn.mp4" type="audio/mp4">
-        <source src="pgn.mp4" type="video/mp4">
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
     </audio>
 
     <div class="invitation-card">
+
         <div class="content-layer">
 
             <p class="header-subtitle">MIS 15 AÑOS</p>
@@ -405,16 +333,6 @@
                 "Veo en ti la luz, y la claridad ha llegado ya..." <br><br>
                 Te espero para compartir juntos un día inolvidable lleno de alegría y momentos especiales.
             </p>
-            
-            <div style="margin-top: 15px; border-top: 1px solid rgba(255,215,0,0.3); padding-top: 12px; margin-bottom: 20px;">
-                <p style="font-size: 0.75rem; letter-spacing: 2px; color: #ffd700; text-transform: uppercase; margin-bottom: 4px;">Invitación especial para:</p>
-                <p id="invitado-nombre" style="font-size: 1.15rem; color: #ffffff; font-family: 'Cinzel', serif; font-weight: bold;">Familia / Nombre</p>
-                
-                <div style="margin-top: 15px; border-top: 1px solid rgba(255,215,0,0.3); padding-top: 12px; margin-bottom: 4px;"></div>
-                
-                <p style="font-size: 0.75rem; letter-spacing: 2px; color: #ffd700; text-transform: uppercase; margin-bottom: 4px;">VÁLIDO PARA:</p>
-                <p id="invitado-cupo" style="font-size: 1rem; color: #ffffff; font-family: 'Cinzel', serif; font-weight: bold;"></p>
-            </div>
 
             <div class="card-box">
                 <h3>Faltan Pocos Días</h3>
@@ -431,7 +349,24 @@
                 <p style="font-size: 0.9rem; font-weight: 600; color: #ffffff;">DOMINGO 29 DE NOVIEMBRE</p>
                 <p style="font-size: 0.8rem; color: #ffd700; margin-top: 3px;">Horario: 11:00 hs a 18:00 hs</p>
                 <div class="divider" style="margin: 12px auto; background: linear-gradient(90deg, transparent, #ffd700, transparent);"></div>
-                <button class="btn-action btn-outline" onclick="openLocationMap()">Ver Ubicación</button>
+                <button class="btn-action btn-outline" onclick="openLocationMap()">📍 Ver Ubicación</button>
+            </div>
+
+            <!-- SECCIÓN NUEVA: RECORDATORIO / TIPS PARA EL DÍA -->
+            <div class="card-box" style="border: 1px solid #ffae00; background: rgba(30, 12, 45, 0.85);">
+                <h3>✨ ¡Recordatorio Importante!</h3>
+                <p style="font-size: 0.85rem; color: #ffffff; margin-bottom: 12px; line-height: 1.5;">
+                    ¡Disfrutemos a pleno al aire libre! Te recordamos traer lo necesario para pasar una tarde genial:
+                </p>
+                <div class="items-list">
+                    <span class="tag-item">🏊‍♀️ Ropa de pileta</span>
+                    <span class="tag-item">👕 Ropa cómoda</span>
+                    <span class="tag-item">🪑 Tu silleta</span>
+                    <span class="tag-item">🧉 Mate / Tereré</span>
+                </div>
+                <p style="font-size: 0.78rem; color: #ffd700; margin-top: 12px; font-style: italic;">
+                    ¡Te esperamos con muchas ansias para festejar juntos!
+                </p>
             </div>
 
             <div class="card-box">
@@ -439,22 +374,22 @@
                 <p style="font-size: 0.82rem; color: #ffffff; margin-bottom: 8px;">
                     Dress Code: <b style="color: #ffd700;">Casual & Cómodo</b>
                 </p>
-                <p style="font-size: 0.78rem; color: #ffd700; margin-bottom: 10px;">Te sugerimos traer:</p>
-                <div class="items-list">
-                    <span class="tag-item">🪑 Tu sillón</span>
-                    <span class="tag-item">🧉 Mate / Tere</span>
-                    <span class="tag-item">Muchas ganas de disfrutar</span>
-                </div>
             </div>
 
+            <!-- SECCIÓN CON EL CÓDIGO QR DIRECTO -->
             <div class="card-box" style="border: 1px solid #ffd700; background: rgba(35, 15, 55, 0.85);">
                 <h3>📸 Galería en Vivo</h3>
                 <p style="font-size: 0.82rem; color: #ffffff; margin-bottom: 12px; line-height: 1.4;">
                     ¡Escanea o toca el código QR para compartir tus fotos en nuestro álbum!
                 </p>
+                
                 <div class="qr-card-container" onclick="openPhotoGallery()">
                     <div id="qrcode-direct"></div>
                 </div>
+                
+                <p style="font-size: 0.72rem; color: #ffd700; margin-top: 10px; opacity: 0.9;">
+                    ✨ Toca sobre el QR para abrir la galería
+                </p>
             </div>
 
             <div class="card-box">
@@ -466,92 +401,49 @@
 
             <div class="card-box" style="border: 1px solid #25d366;">
                 <h3 style="color: #25d366;">Confirmar Asistencia</h3>
-                <p style="font-size: 0.8rem; color: #ffffff; margin-bottom: 12px;">Agradecemos confirmar tu presencia hasta el 15 de Octubre ¡GRACIAS! </p>
-                <button class="btn-action" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: #ffffff;" onclick="confirmRSVP()">Confirmar Asistencia</button>
+                <p style="font-size: 0.8rem; color: #ffffff; margin-bottom: 12px;">Agradecemos confirmar tu presencia para este día tan especial.</p>
+                <button class="btn-action" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: #ffffff;" onclick="confirmRSVP()">✅ Confirmar Asistencia</button>
             </div>
+
         </div>
     </div>
 
     <script>
-        // CONFIGURACIÓN DE ENLACES Y TELEFONOS
+        // CONFIGURACIÓN DE ENLACES
         const ALBUM_URL = "https://photos.app.goo.gl/MQQgbzZxboYACygS9";
         const MAPS_URL = "https://maps.app.goo.gl/ir9rUSUv9ZQCoKmm7?g_st=aw";
-        const RSVP_PHONE_NUMBER = "5493764803907";
-        const MESSAGES_PHONE_NUMBER = "5493765036144";
 
-        let isPlaying = false;
+        // CONFIGURACIÓN DE TELÉFONOS DE WHATSAPP
+        const RSVP_PHONE_NUMBER = "5493764803907"; // Número para Confirmar Asistencia
+        const MESSAGES_PHONE_NUMBER = "NUMERO_DE_LA_QUINCEAÑERA"; // Número para recibir mensajes/felicitaciones
+
+        // GENERACIÓN AUTOMÁTICA DEL QR AL CARGAR LA PÁGINA
+        window.addEventListener('DOMContentLoaded', () => {
+            const qrContainer = document.getElementById("qrcode-direct");
+            new QRCode(qrContainer, {
+                text: ALBUM_URL,
+                width: 160,
+                height: 160,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+
         const audio = document.getElementById('bgMusic');
+        let isPlaying = false;
 
-        // INICIAR EXPERIENCIA Y MÚSICA AL TOCAR EL OVERLAY
-        function startExperience() {
-            const overlay = document.getElementById('start-overlay');
-            if (overlay) {
-                overlay.style.opacity = '0';
-                overlay.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => overlay.remove(), 500);
-            }
-
-            if (audio) {
-                audio.play().then(() => {
-                    isPlaying = true;
-                }).catch(err => {
-                    console.log("Error al iniciar audio:", err);
-                });
-            }
-        }
-
-        // CONTROL DE BOTÓN DE MÚSICA
         function toggleAudio() {
-            if (!audio) return;
-
             if (isPlaying) {
                 audio.pause();
                 isPlaying = false;
             } else {
-                audio.play().then(() => {
-                    isPlaying = true;
-                }).catch(err => console.log("Error al reproducir:", err));
+                audio.play();
+                isPlaying = true;
             }
         }
 
-        // LECTURA DE PARÁMETROS URL (?p=Nombre&c=Cantidad)
-        window.addEventListener('DOMContentLoaded', () => {
-            const paramsURL = new URLSearchParams(window.location.search);
-            const nombreParam = paramsURL.get('p');
-            const cantidadParam = paramsURL.get('c');
-
-            if (nombreParam) {
-                const elNombre = document.getElementById('invitado-nombre');
-                if (elNombre) {
-                    elNombre.textContent = decodeURIComponent(nombreParam.replace(/\+/g, ' '));
-                }
-            }
-
-            const elCupo = document.getElementById('invitado-cupo');
-            if (cantidadParam && elCupo) {
-                const cuposNum = parseInt(cantidadParam, 10);
-                if (cuposNum === 1) {
-                    elCupo.textContent = "1 PERSONA";
-                } else if (cuposNum > 1) {
-                    elCupo.textContent = `${cuposNum} PERSONAS`;
-                }
-            }
-
-            // Generación del QR
-            const qrContainer = document.getElementById("qrcode-direct");
-            if (qrContainer) {
-                new QRCode(qrContainer, {
-                    text: ALBUM_URL,
-                    width: 160,
-                    height: 160,
-                    colorDark : "#000000",
-                    colorLight : "#ffffff",
-                    correctLevel : QRCode.CorrectLevel.H
-                });
-            }
-        });
-
-        // CONTADOR
+        // FECHA DEL EVENTO
         const eventDate = new Date(2026, 10, 29, 11, 0, 0).getTime();
 
         function updateCountdown() {
@@ -578,10 +470,10 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // EFECTOS VISUALES (Chispas y Linternas)
         function createSparkle() {
             const sparkle = document.createElement('div');
             sparkle.className = 'flower-sparkle';
+            
             sparkle.style.left = Math.random() * 95 + 'vw';
             sparkle.style.top = Math.random() * 80 + 10 + 'vh';
             
@@ -593,7 +485,10 @@
             sparkle.style.animationDuration = duration + 's';
 
             document.body.appendChild(sparkle);
-            setTimeout(() => { sparkle.remove(); }, duration * 1000);
+
+            setTimeout(() => { 
+                sparkle.remove(); 
+            }, duration * 1000);
         }
         setInterval(createSparkle, 350);
 
@@ -612,26 +507,32 @@
             lantern.style.transform = `scale(${scale})`;
 
             document.body.appendChild(lantern);
-            setTimeout(() => { lantern.remove(); }, 7000);
+
+            setTimeout(() => {
+                lantern.remove();
+            }, 7000);
         }
 
         window.addEventListener('pointerdown', (e) => {
             spawnLantern(e.clientX, e.clientY);
         });
 
-        // ACCIONES
+        // REDIRECCIÓN A GOOGLE MAPS
         function openLocationMap() {
             window.open(MAPS_URL, '_blank');
         }
 
+        // REDIRECCIÓN A LA GALERÍA
         function openPhotoGallery() {
             window.open(ALBUM_URL, '_blank');
         }
 
+        // ENVIAR MENSAJE PARA LA QUINCEAÑERA
         function sendWish() {
             const name = document.getElementById('senderName').value.trim();
             const message = document.getElementById('wishMessage').value.trim();
 
+            String.prototype.trim.call(name);
             if (!name || !message) {
                 alert("Por favor completa tu nombre y el mensaje.");
                 return;
@@ -641,8 +542,9 @@
             window.open(`https://api.whatsapp.com/send?phone=${MESSAGES_PHONE_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
         }
 
+        // CONFIRMAR ASISTENCIA
         function confirmRSVP() {
-            const text = "¡Hola! Quisiera confirmar mi asistencia a los 15 de Agus.";
+            const text = "¡Hola! Quisiera confirmar mi asistencia para los 15 años de Agustina. 🌸✨";
             window.open(`https://api.whatsapp.com/send?phone=${RSVP_PHONE_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
         }
     </script>
