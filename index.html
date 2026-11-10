@@ -162,3 +162,379 @@
             border-radius: 18px;
             padding: 20px 16px;
             margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .card-box h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #ffd700;
+            margin-bottom: 12px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .circle-time {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            border: 1px solid #ffd700;
+            background: rgba(15, 8, 25, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+
+        .circle-time span {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .circle-time small {
+            font-size: 0.55rem;
+            color: #ffd700;
+            text-transform: uppercase;
+        }
+
+        .items-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag-item {
+            background: rgba(255, 215, 0, 0.15);
+            color: #fff3cc;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .custom-input, .custom-textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a0926;
+        }
+
+        .btn-action {
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+            color: #0d0614;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: transform 0.2s ease;
+        }
+
+        .btn-action:active {
+            transform: scale(0.98);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #ffd700;
+            color: #ffd700;
+            box-shadow: none;
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: rgba(20, 10, 32, 0.9);
+            border: 1px solid #ffd700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            z-index: 10000;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #ffd700;
+        }
+
+        /* ESTILOS DEL QR EN PANTALLA */
+        .qr-card-container {
+            display: inline-block;
+            background: #ffffff;
+            padding: 14px;
+            border-radius: 16px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 5px;
+        }
+
+        .qr-card-container:active {
+            transform: scale(0.96);
+        }
+
+        #qrcode-direct img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="music-btn" onclick="toggleAudio()" title="Música de fondo">🎵</div>
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="invitation-card">
+
+        <div class="content-layer">
+
+            <p class="header-subtitle">MIS 15 AÑOS</p>
+
+            <h1 class="main-title">Agustina</h1>
+            <p class="main-title-sub">29 . 11 . 2026</p>
+
+            <div class="divider"></div>
+
+            <p class="phrase">
+                "Veo en ti la luz, y la claridad ha llegado ya..." <br><br>
+                Te espero para compartir juntos un día inolvidable lleno de alegría y momentos especiales.
+            </p>
+
+            <div class="card-box">
+                <h3>Faltan Pocos Días</h3>
+                <div class="countdown-container">
+                    <div class="circle-time"><span id="days">00</span><small>Días</small></div>
+                    <div class="circle-time"><span id="hours">00</span><small>Hs</small></div>
+                    <div class="circle-time"><span id="minutes">00</span><small>Min</small></div>
+                    <div class="circle-time"><span id="seconds">00</span><small>Seg</small></div>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <h3>¿Cuándo y Dónde?</h3>
+                <p style="font-size: 0.9rem; font-weight: 600; color: #ffffff;">DOMINGO 29 DE NOVIEMBRE</p>
+                <p style="font-size: 0.8rem; color: #ffd700; margin-top: 3px;">Horario: 11:00 hs a 18:00 hs</p>
+                <div class="divider" style="margin: 12px auto; background: linear-gradient(90deg, transparent, #ffd700, transparent);"></div>
+                <button class="btn-action btn-outline" onclick="openLocationMap()">📍 Ver Ubicación</button>
+            </div>
+
+            <div class="card-box">
+                <h3>Día al Aire Libre</h3>
+                <p style="font-size: 0.82rem; color: #ffffff; margin-bottom: 8px;">
+                    Dress Code: <b style="color: #ffd700;">Casual & Cómodo</b>
+                </p>
+                <p style="font-size: 0.78rem; color: #ffd700; margin-bottom: 10px;">Te sugerimos traer:</p>
+                <div class="items-list">
+                    <span class="tag-item">🪑 Tu silleta</span>
+                    <span class="tag-item">🧉 Mate / Tereré</span>
+                    <span class="tag-item">✨ Muchas ganas de disfrutar</span>
+                </div>
+            </div>
+
+            <!-- SECCIÓN CON EL CÓDIGO QR DIRECTO -->
+            <div class="card-box" style="border: 1px solid #ffd700; background: rgba(35, 15, 55, 0.85);">
+                <h3>📸 Galería en Vivo</h3>
+                <p style="font-size: 0.82rem; color: #ffffff; margin-bottom: 12px; line-height: 1.4;">
+                    ¡Escanea o toca el código QR para compartir tus fotos en nuestro álbum!
+                </p>
+                
+                <div class="qr-card-container" onclick="openPhotoGallery()">
+                    <div id="qrcode-direct"></div>
+                </div>
+                
+                <p style="font-size: 0.72rem; color: #ffd700; margin-top: 10px; opacity: 0.9;">
+                    ✨ Toca sobre el QR para abrir la galería
+                </p>
+            </div>
+
+            <div class="card-box">
+                <h3>Mensajes para la Quinceañera</h3>
+                <input type="text" id="senderName" class="custom-input" placeholder="Tu Nombre y Apellido">
+                <textarea id="wishMessage" class="custom-textarea" style="height:70px; resize:none;" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <button class="btn-action" onclick="sendWish()">💌 Enviar Mensaje</button>
+            </div>
+
+            <div class="card-box" style="border: 1px solid #25d366;">
+                <h3 style="color: #25d366;">Confirmar Asistencia</h3>
+                <p style="font-size: 0.8rem; color: #ffffff; margin-bottom: 12px;">Agradecemos confirmar tu presencia para este día tan especial.</p>
+                <button class="btn-action" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: #ffffff;" onclick="confirmRSVP()">✅ Confirmar Asistencia</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // CONFIGURACIÓN DE ENLACES
+        const ALBUM_URL = "https://photos.app.goo.gl/MQQgbzZxboYACygS9";
+        const MAPS_URL = "https://maps.app.goo.gl/ir9rUSUv9ZQCoKmm7?g_st=aw";
+
+        // CONFIGURACIÓN DE TELÉFONOS DE WHATSAPP
+        const RSVP_PHONE_NUMBER = "5493764803907"; // Número para Confirmar Asistencia
+        const MESSAGES_PHONE_NUMBER = "NUMERO_DE_LA_QUINCEAÑERA"; // Reemplazar con el número para recibir mensajes/felicitaciones
+
+        // GENERACIÓN AUTOMÁTICA DEL QR AL CARGAR LA PÁGINA
+        window.addEventListener('DOMContentLoaded', () => {
+            const qrContainer = document.getElementById("qrcode-direct");
+            new QRCode(qrContainer, {
+                text: ALBUM_URL,
+                width: 160,
+                height: 160,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+
+        const audio = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+            } else {
+                audio.play();
+                isPlaying = true;
+            }
+        }
+
+        // FECHA DEL EVENTO
+        const eventDate = new Date(2026, 10, 29, 11, 0, 0).getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = eventDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            } else {
+                document.getElementById('days').innerText = '00';
+                document.getElementById('hours').innerText = '00';
+                document.getElementById('minutes').innerText = '00';
+                document.getElementById('seconds').innerText = '00';
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'flower-sparkle';
+            
+            sparkle.style.left = Math.random() * 95 + 'vw';
+            sparkle.style.top = Math.random() * 80 + 10 + 'vh';
+            
+            const size = Math.random() * 6 + 4;
+            sparkle.style.width = size + 'px';
+            sparkle.style.height = size + 'px';
+            
+            const duration = Math.random() * 3 + 4;
+            sparkle.style.animationDuration = duration + 's';
+
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => { 
+                sparkle.remove(); 
+            }, duration * 1000);
+        }
+        setInterval(createSparkle, 350);
+
+        function spawnLantern(x, y) {
+            const lantern = document.createElement('div');
+            lantern.className = 'rapunzel-lantern';
+
+            const sun = document.createElement('div');
+            sun.className = 'lantern-sun';
+            lantern.appendChild(sun);
+
+            lantern.style.left = x + 'px';
+            lantern.style.top = y + 'px';
+
+            const scale = Math.random() * 0.3 + 0.85;
+            lantern.style.transform = `scale(${scale})`;
+
+            document.body.appendChild(lantern);
+
+            setTimeout(() => {
+                lantern.remove();
+            }, 7000);
+        }
+
+        window.addEventListener('pointerdown', (e) => {
+            spawnLantern(e.clientX, e.clientY);
+        });
+
+        // REDIRECCIÓN A GOOGLE MAPS
+        function openLocationMap() {
+            window.open(MAPS_URL, '_blank');
+        }
+
+        // REDIRECCIÓN A LA GALERÍA
+        function openPhotoGallery() {
+            window.open(ALBUM_URL, '_blank');
+        }
+
+        // ENVIAR MENSAJE PARA LA QUINCEAÑERA
+        function sendWish() {
+            const name = document.getElementById('senderName').value.trim();
+            const message = document.getElementById('wishMessage').value.trim();
+
+            if (!name || !message) {
+                alert("Por favor completa tu nombre y el mensaje.");
+                return;
+            }
+
+            const text = `¡Hola! Soy *${name}* y le dejo este mensaje a Agustina por sus 15 años:\n\n"${message}"`;
+            window.open(`https://api.whatsapp.com/send?phone=${MESSAGES_PHONE_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // CONFIRMAR ASISTENCIA
+        function confirmRSVP() {
+            const text = "¡Hola! Quisiera confirmar mi asistencia para los 15 años de Agustina. 🌸✨";
+            window.open(`https://api.whatsapp.com/send?phone=${RSVP_PHONE_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
